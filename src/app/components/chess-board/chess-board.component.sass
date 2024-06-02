@@ -1,0 +1,33 @@
+.board
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    max-width: 600px
+    max-height: 600px
+    margin: 0 auto
+    margin-top: 50px
+    border: solid 1px black
+    .row
+        display: flex
+    .row:nth-child(odd)
+        .square:nth-child(odd)
+            background-color: #769656
+    .row:nth-child(even)
+        .square:nth-child(even)
+            background-color: #769656
+
+.square
+    width: 75px
+    height: 75px
+    background-color: #eeeed2
+    display: flex
+    align-items: center
+    justify-content: center
+    &.square:has(.piece)
+        cursor: pointer
+        .piece
+            
+    
+[draggable="true"] 
+  position: relative
+  z-index: 1

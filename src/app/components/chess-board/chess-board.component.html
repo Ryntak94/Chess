@@ -1,0 +1,10 @@
+<div>
+    <div class="board">
+        <div class="row" *ngFor="let row of rows; let r = index">
+            <div class="square" *ngFor="let square of row; let c = index" (dragover)="onDragOverEnterHandler($event)" (dragenter)="onDragOverEnterHandler($event)" (drop)="onDropHandler(r, c)">
+                <div class="piece" *ngIf="square !== null">
+                    <fa-icon [icon]="square.icon" size="4x" [styles]="{color: square.piece.color}" draggable="true" (drag)="onDrag(r, c)"></fa-icon>
+                </div>
+            </div>
+    </div>
+</div>
